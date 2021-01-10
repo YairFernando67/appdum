@@ -3,11 +3,13 @@
 server '138.197.12.96', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:YairFernando67/appdum.git'
-set :application,     'fastfood'
+set :application,     'appdum'
 set :user,            'admin_user'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 set :puma_user, fetch(:user)
+
+append :linked_files, "config/master.key"
 
 # Don't change these unless you know what you're doing
 set :pty,             true
